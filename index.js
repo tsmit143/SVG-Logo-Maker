@@ -18,7 +18,7 @@ inquirer
             name: 'textColor',
         },
         {
-            type:'input',
+            type:'list',
             message: 'What is your desired logo shape?',
             name: 'shape',
             choices: ['circle','triangle','sqaure'],
@@ -29,22 +29,30 @@ inquirer
             name: 'shapeColor',
         },
     ])
-    .then((data)=>{}
+    .then((data)=>{
+       const filename = `logo.svg`;
+       var fs = require('fs');
+
+    fs.writeFile(filename, JSON.stringify(data), function (err) {
+        if (err) throw err;
+    console.log('Generated logo.svg');
+        });
+    }
     )
 
 
-let shape;
-if(user picked square){
-    shape = new Sqaure(someCOlor)
-} else if(user picked circle){
-    shape = new Circle(someCOlor)
-}else{
-    shape = new Triangle(someCOlor)
-}
+// let shape;
+// if(user picked square){
+//     shape = new Sqaure(someCOlor)
+// } else if(user picked circle){
+//     shape = new Circle(someCOlor)
+// }else{
+//     shape = new Triangle(someCOlor)
+// }
 
 
 
-`<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-  ${shape.render()}
-  <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">${userTextAnswer}</text>
-</svg>`
+// `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+//   ${shape.render()}
+//   <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">${userTextAnswer}</text>
+// </svg>`
