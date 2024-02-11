@@ -1,10 +1,11 @@
 class Shape{
     constructor(color){
         this.color = color;
+        this.textColor = textColor;
     }
 }
 
-class Circle extends Shape{
+export class Circle extends Shape{
     constructor(color){
         super(color);
     }
@@ -12,7 +13,7 @@ class Circle extends Shape{
         return `<circle cx="150" cy="100" r="80" fill="${this.color}" />`
     }
 }
-class Triangle extends Shape{
+export class Triangle extends Shape{
     constructor(color){
         super(color);
     }
@@ -20,7 +21,7 @@ class Triangle extends Shape{
         return `<polygon points="150, 18 244, 182 56, 182" fill="${this.color}" />`
     }
 }
-class Sqaure extends Shape{
+export class Sqaure extends Shape{
     constructor(color){
         super(color);
     }
