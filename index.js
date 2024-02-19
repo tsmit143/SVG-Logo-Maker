@@ -3,9 +3,9 @@
 //text color
 //shape - list options (circle, triangle, sqaure)
 //shape color
-require(Triangle);
-require(Sqaure);
-require(Circle);
+// require(Triangle);
+// require(Sqaure);
+// require(Circle);
 
 const inquirer = require('inquirer');
 
